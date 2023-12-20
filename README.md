@@ -8,10 +8,10 @@ Little Lemon is designed to be responsive and user-friendly across various devic
 <h2>Preview of Little Lemon</h2>
 Below are the previews of how Little Lemon looks on different devices. This section provides a glimpse into the user-friendly interface and design of our application.
 
-PC view:
+<h3>PC view:</h3>
 ![Screenshot of Little Lemon on PC](./src/images/little-lemon-pc-view.jpg)
 
-Mobile view:
+<h3>Mobile view:</h3>
 ![Screenshot of Little Lemon on Mobile](./src/images/little-lemon-mobile-view.jpg)
 
 <h2>Key Features</h2>
@@ -33,6 +33,6 @@ Mobile view:
     -Firestore Database: Our database is powered by Firestore, ensuring fast, reliable, and scalable data storage.
     -Firebase Authentication: Secure and straightforward user authentication is provided through Firebase.
 
-<h2>Technology Stack</h2>
+<h2>Getting Started with Little Lemon</h2>
 <h3>Initial Database Setup</h3>
 Populate the Database: To get started, you can initially populate the Firebase database. Execute the script located at src/firebase/populateFirestore to set up your database with default data.
