@@ -9,9 +9,11 @@ Little Lemon is designed to be responsive and user-friendly across various devic
 Below are the previews of how Little Lemon looks on different devices. This section provides a glimpse into the user-friendly interface and design of our application.
 
 <h3>PC view:</h3>
+
 ![Screenshot of Little Lemon on PC](./src/images/little-lemon-pc-view.jpg)
 
 <h3>Mobile view:</h3>
+
 ![Screenshot of Little Lemon on Mobile](./src/images/little-lemon-mobile-view.jpg)
 
 <h2>Key Features</h2>
