@@ -62,7 +62,7 @@ export const ReviewForm = () => {
                 <div className='ReviewFormInputes'>
                     <form onSubmit={formik.handleSubmit} noValidate>
                             {/* Food Rating */}
-                            <div className='ReviewDivs' isInvalid={formik.errors.foodRating}>
+                            <div className='ReviewDivs'>
                                 <label htmlFor="food-rating">Food Rating:</label>
                                 <Rating
                                     key={`foodRating-${ratingKey}`}
@@ -74,7 +74,7 @@ export const ReviewForm = () => {
                             ) : null}
                             </div>
                             {/* Service Rating */}
-                            <div className='ReviewDivs' isInvalid={formik.errors.serviceRating}>
+                            <div className='ReviewDivs' >
                                     <label htmlFor="service-rating">Service Rating:</label>
                                         <Rating
                                             key={`serviceRating-${ratingKey}`}
@@ -86,7 +86,7 @@ export const ReviewForm = () => {
                                     ) : null}
                             </div>
                             {/* Atmosphere Rating */}
-                            <div className='ReviewDivs' isInvalid={formik.errors.atmosphereRating}>
+                            <div className='ReviewDivs'>
                                 <label htmlFor="atmosphere-rating">Atmosphere Rating:</label>
                                 <Rating
                                     key={`atmosphereRating-${ratingKey}`}
@@ -98,7 +98,7 @@ export const ReviewForm = () => {
                                 ) : null}
                             </div>
                             {/* Text Review */}
-                            <div className='ReviewDivs' isInvalid={formik.errors.reviewText}>
+                            <div className='ReviewDivs'>
                                 <label htmlFor="review-text">Review:</label>
                                 <textarea
                                     data-testid="text-review"
