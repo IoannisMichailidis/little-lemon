@@ -1,0 +1,24 @@
+/* Flex */
+.AboutInfo {
+    grid-area: 2 / 3 / 2 / 7;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom:10px;
+
+}
+
+.socialMediaInfo a {
+    color: black;
+    margin-left: 10px;
+}
+
+.contactInfo p, .contactInfo a {
+    text-decoration: none;
+    color: black;
+
+}
+
+.socialMediaInfo a:hover {
+    color: #333; 
+}

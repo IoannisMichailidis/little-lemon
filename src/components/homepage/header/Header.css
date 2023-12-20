@@ -1,0 +1,60 @@
+.Header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* grid-template-rows: repeat(2,auto); */
+    grid-template-rows: 1fr auto;
+    align-items: end;
+}
+
+.HeaderVideo {
+    grid-area: 1 / 1 / 1 / 13;
+    position:relative;
+    width: 100%;
+    height: 500px;
+}
+
+.HeaderDescription {
+    grid-area: 1 / 3 / 1 / 11;
+    position: relative; /* Ensures text is on top of the overlay */
+    z-index: 2; /* Above the overlay */
+    padding-bottom: 10px;
+
+}
+
+.HeaderDescription article, .HeaderDescription div{
+    text-align: left;
+}
+
+.Header p {
+    color: var(--highlight-white);
+}
+
+.Header h2 {
+    color: var(--primary-action);
+}
+
+.HeaderVideo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.VideoOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(7px); /* Adjust the blur level as needed */
+    z-index: 1; /* Ensures it's between the video and the text */
+}
+
+@media screen and (max-width: 650px) {
+    .HeaderDescription p {
+        font-size: 16px;
+    }
+}
+

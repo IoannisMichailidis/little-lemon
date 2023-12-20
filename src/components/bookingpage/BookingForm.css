@@ -1,0 +1,85 @@
+.BookingContainer {
+    position: relative;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../images/bookingImage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+  }
+  
+.BookingContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5); 
+  z-index: 1;
+}
+
+.BookingForm {
+  position: relative;
+  z-index: 1;
+  grid-area: 1 / 6 / 1 / 9;
+ background-color: var(--highlight-white);
+ border-radius: 16px;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+ padding: 20px;
+ max-width: 400px;
+}
+
+.BookingFormInputes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+form {
+  width: 300px;
+  display: grid;
+  max-width: 300px;
+  gap: 20px;
+  text-align: left;
+}
+
+.BookingDivs {
+  display: flex;
+  flex-direction: column;
+}
+
+.BookingInput {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ErrorBookingInput {
+  padding: 8px;
+  border: 1px solid red;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ErrorDiv {
+  margin: 0px;
+  color: red;
+  font-size: 13pt;
+}
+
+@media screen and (max-width: 800px) {
+  .BookingForm {
+      grid-area: 1 / 4 / 1 / 11;
+    }
+}

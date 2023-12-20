@@ -1,0 +1,32 @@
+/* Grid */
+.Bookings {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2,auto);
+    grid-column-gap: 10px;
+}
+
+.BookingsHeaderContainer {
+    /* row-start column-stsart row-end  column-end */
+    grid-area: 1 / 3 / 1 / 11;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.BookingsContentContainer {
+    grid-area: 2 / 3 / 2 / 11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.BookingsContentArticleContainer p {
+    padding-top: 10px;
+}
+
+@media screen and (max-width: 650px) {
+    .BookingsHeaderContainer h2 {
+        font-size: 32px;
+    }
+  }

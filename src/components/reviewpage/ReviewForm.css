@@ -1,0 +1,81 @@
+.ReviewContainer {
+    position: relative;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    background-image: url('../../images/reviewImage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+  }
+  
+  .ReviewContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5); 
+    z-index: 1;
+  }
+
+.ReviewForm {
+  position: relative;
+  z-index: 1;
+  grid-area: 1 / 6 / 1 / 9;
+ background-color: var(--highlight-white);
+ border-radius: 16px;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+ padding: 20px;
+ max-width: 95%; 
+ 
+}
+
+.ReviewFormInputes {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding-bottom: 20px;
+  }
+  
+  form {
+    width: 300px;
+    display: grid; 
+    max-width: 300px; 
+    gap: 20px;
+    text-align: left;
+  }
+  
+  .ReviewDivs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+  }
+
+@media screen and (max-width: 850px) {
+    .ReviewForm {
+        grid-area: 1 / 4 / 1 / 11;
+      }
+}
+
+@media (max-width: 1250px) {
+  .star-svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .star-svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+

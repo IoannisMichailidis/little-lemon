@@ -1,0 +1,29 @@
+.Main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3,auto);
+    grid-column-gap: 10px;
+    grid-template-areas:
+    'sec1 sec1 sec1 sec1 sec1 sec1 sec1 sec1 sec1 sec1 sec1 sec1'
+    'sec2 sec2 sec2 sec2 sec2 sec2 sec2 sec2 sec2 sec2 sec2 sec2'
+    'sec3 sec3 sec3 sec3 sec3 sec3 sec3 sec3 sec3 sec3 sec3 sec3'
+}
+
+.Specials {
+    /* row-start column-stsart row-end  column-end */
+    grid-area: sec1;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.Testimonials {
+    grid-area: sec2;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.History {
+    grid-area: sec3;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}

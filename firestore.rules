@@ -1,0 +1,31 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Rules for bookings
+    match /bookings/{document=**} {
+      // allow read, write; // write includes create, update, delete
+      // Rule 1: Allow users to create booking only if logged in
+      allow create: if request.auth !=null;
+      // Rule 2: logged in user uid must match the document creator to read bookings
+      allow read: if request.auth.uid == resource.data.uid;
+    }
+    // Rules for dates
+    match /dates/{document=**} {
+      // Rule 1: Allow users to read and update dates (removing timeslots) only if logged in
+      allow update, read: if request.auth !=null;
+    }
+    // Rules for specials
+    match /specials/{document=**} {
+      // Rule 1: Allow all the users to read
+      allow read;
+    }
+    // Rules for testimonials
+    match /testimonials/{document=**} {
+      // Rule 1: Allow all the users to read
+      allow read;
+      // Rules 2: Allow users to create testimonials only if logged in
+      allow create: if request.auth !=null;
+    }
+  }
+}
