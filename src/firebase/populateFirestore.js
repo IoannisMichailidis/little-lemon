@@ -189,4 +189,4 @@ resetAndPopulateDates()
 
 
 
-// Execute the file from the terminal => node populateFirestore.js
+// Execute the file from the root directory => npm run populateFirebase

@@ -37,4 +37,4 @@ Below are the previews of how Little Lemon looks on different devices. This sect
 
 <h2>Getting Started with Little Lemon</h2>
 <h3>Initial Database Setup</h3>
-Populate the Database: To get started, you can initially populate the Firebase database. Execute the script located at src/firebase/populateFirestore to set up your database with default data.
+Populate the Database: To get started, you can initially populate the Firebase database. Execute the script located at src/firebase/populateFirestore using 'npm run populateFirebase' to set up your database with default data.
