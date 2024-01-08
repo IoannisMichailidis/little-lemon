@@ -129,8 +129,8 @@ export const BookingForm = () => {
                       {...formik.getFieldProps("occasion")}
                     >
                     {!formik.values.occasion && <option value="" disabled hidden></option>}
-                    <option value="birthday" className="opt">Birthday</option>
-                    <option value="anniversary" className="opt">Anniversary</option>
+                      <option value="birthday" className="opt">Birthday</option>
+                      <option value="anniversary" className="opt">Anniversary</option>
                     </select>
                     {formik.touched.occasion && formik.errors.occasion && <p className="ErrorDiv">{formik.errors.occasion}</p>}
                 </div>

@@ -7,12 +7,13 @@ import { useAuthContext } from './hooks/useAuthContext';
 import {HomePage} from './pages/Homepage';
 import {BookingPage} from './pages/Bookingpage';
 import {ConfirmationPage} from './pages/Confirmationpage';
-import {SpecialDetailsPage} from './pages/SpecialDetailspage';
+import {ProductDetailsPage} from './pages/ProductDetailspage';
 import {ReviewPage} from './pages/ReviewPage';
 import {LoginPage} from './pages/Loginpage';
 import {SignupPage} from './pages/Signuppage';
 import { MyBookingsPage } from './pages/MyBookingspage';
 import { AboutPage } from './pages/Aboutpage';
+import { MenuPage } from './pages/Menupage';
 
 // Protected Route Components
 import {BookingProtectedRoute} from './utils/protectedRouteComponents';
@@ -31,6 +32,8 @@ const App = () => {
       {authIsReady && (
         <Routes>
           <Route path="/" element={<HomePage/>} />
+          <Route path="/menu" element={<MenuPage/>} />
+          <Route path="/:id" element={<ProductDetailsPage/>} />
           <Route path="/about" element={<AboutPage/>} />
           <Route
             path="/booking"
@@ -49,7 +52,6 @@ const App = () => {
              </BookingProtectedRoute>} 
           />
 
-          <Route path="/:id" element={<SpecialDetailsPage/>} />
           <Route 
             path="/review" 
             element={

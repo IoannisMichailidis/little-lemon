@@ -11,12 +11,13 @@ import './Specials.css';
 import { Card } from './Special-card';
 
 export const Specials = () => {
+    const query = ['isSpecial', '==', true];
     // Fetch specials
-    const {data,isPending,error} = useCollection('specials');
+    const {data,isPending,error} = useCollection('products', query);
     return (
         <>
             <section className="SpecialsHeaderContainer">
-                <h2 className="title">This weeks Specials!</h2>
+                <h2 className="title">This week's Specials!</h2>
             </section>
             <section className="SpecialsContentContainer">
                 <div className="SpecialsContentArticleContainer">

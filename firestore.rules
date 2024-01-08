@@ -15,8 +15,8 @@ service cloud.firestore {
       // Rule 1: Allow users to read and update dates (removing timeslots) only if logged in
       allow update, read: if request.auth !=null;
     }
-    // Rules for specials
-    match /specials/{document=**} {
+    // Rules for products
+    match /products/{document=**} {
       // Rule 1: Allow all the users to read
       allow read;
     }

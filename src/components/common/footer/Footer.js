@@ -39,6 +39,9 @@ export const Footer = () => {
                             <Link to="/" className="nav-item"><p>Home</p></Link>
                         </li>
                         <li>
+                            <Link to="/menu" className="nav-item"><p>Menu</p></Link>
+                        </li>                        
+                        <li>
                         <Link to="/about" className="nav-item"><p>About</p></Link>
                         </li>
                         <li>

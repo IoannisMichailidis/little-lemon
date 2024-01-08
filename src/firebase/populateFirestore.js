@@ -1,6 +1,9 @@
 const admin = require('firebase-admin');
 const serviceAccount = require('../../../Firebase Account Cred/little-restaurant-feca3-firebase-adminsdk-bgqep-080cfe1ff1');
 
+const { testimonials } = require('./data/testimonials.js');
+const { products } = require('./data/products.js');
+
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
@@ -60,54 +63,31 @@ async function resetBookings() {
 }
 
 // -----------------------------------------------------------------
-// Reset Specials
+// Reset Products
 // -----------------------------------------------------------------
-async function resetSpecials() {
+async function resetProducts() {
     // Delete existing documents
     const deleteBatch = db.batch();
-    const querySnapshot = await db.collection('specials').get();
+    const querySnapshot = await db.collection('products').get();
     querySnapshot.forEach((doc) => {
         deleteBatch.delete(doc.ref);
     });
 
     // Commit the deleted batch
     await deleteBatch.commit();
-    console.log("Existing specials deleted.");
+    console.log("Existing products deleted.");
 
-    // Create new testimonials
+    // Create new products
     const createBatch = db.batch();
-    const specials = [
-        {
-            description: "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined",
-            image: "https://firebasestorage.googleapis.com/v0/b/little-restaurant-5673b.appspot.com/o/specials%2Flemon%20dessert.jpg?alt=media&token=e8d714a6-fd89-45f5-8e3b-f55736c68f1f",
-            name: "Lemon Dessert"            ,
-            price: 5.20,
-            ingredients: ["Lemon", "Butter", "Suggar", "Salt", "Milk", "Eggs",]
-        },
-        {
-            description: "Our Broschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil",
-            image: "https://firebasestorage.googleapis.com/v0/b/little-restaurant-5673b.appspot.com/o/specials%2Fbruchetta.svg?alt=media&token=e89d4984-ffa3-4744-8d61-0ac22aea18a7",
-            name: "Bruchetta",
-            price: 5.99,
-            ingredients: ["Extra virgin olive oil", "Minced fresh garlic", "Roma tomatoes", "Balsamic vinegar", "Salt", "Black pepper", "Basil ribbons", "French bread", "Finely shredded parmesan cheese"]
-        },
-        {
-            description: "The famous greek salad of crispy lettce peppers, olived and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons",
-            image: "https://firebasestorage.googleapis.com/v0/b/little-restaurant-5673b.appspot.com/o/specials%2Fgreek%20salad.jpg?alt=media&token=44fc4021-c2e6-4b07-a822-d79aa771a413",
-            name: "Greek salad",
-            price: 12.99,
-            ingredients: ["Extra-virgin olive oil","Garlic", "Dried oregano", "Freshly ground black pepper", "Salt", "Cucumber", "Tomatoes", "Feta Cheese", "Pitted Kalamata olives"]
-        }
-    ];
 
-    specials.forEach((special) => {
-        const docRef = db.collection('specials').doc();
-        createBatch.set(docRef, special);
+    products.forEach((product) => {
+        const docRef = db.collection('products').doc();
+        createBatch.set(docRef, product);
     });
 
     // Commit the create batch
     await createBatch.commit();
-    console.log("New specials added.");
+    console.log("New products added.");
 
 }
 // -----------------------------------------------------------------
@@ -127,40 +107,7 @@ async function resetTestimonials() {
 
     // Create new testimonials
     const createBatch = db.batch();
-    const testimonials = [
-        {
-            atmosphereRating: 4,
-            foodRating: 4,
-            serviceRating: 4,
-            rating: 4,
-            reviewText: 'That was a very nice experience!',
-            userName: 'Nikolaos'
-        },
-        {
-            atmosphereRating: 5,
-            foodRating: 5,
-            serviceRating: 5,
-            rating: 5,
-            reviewText: 'Excellent! Highly recommended!',
-            userName: 'Giannis'
-        },
-        {
-            atmosphereRating: 4,
-            foodRating: 5,
-            serviceRating: 5,
-            rating: 5,
-            reviewText: 'Amazing food!',
-            userName: 'Konstantinos'
-        },
-        {
-            atmosphereRating: 4,
-            foodRating: 4,
-            serviceRating: 4,
-            rating: 4,
-            reviewText: 'Nice location and atmosphere!',
-            userName: 'Aris'
-        }
-    ];
+
 
     testimonials.forEach((testimonial) => {
         const docRef = db.collection('testimonials').doc();
@@ -177,7 +124,7 @@ async function resetTestimonials() {
 // Call the function
 resetAndPopulateDates()
     .then(resetBookings)
-    .then(resetSpecials)
+    .then(resetProducts)
     .then(resetTestimonials)
     .then(() => {
         console.log('All operations completed succesfully.');

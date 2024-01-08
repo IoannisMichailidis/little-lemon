@@ -4,13 +4,13 @@ import { projectFirestore } from '../firebase/config';
 
 // Components
 import {Nav} from '../components/common/nav/Nav';
-import {SpecialCardDetails} from '../components/homepage/main/specials/Special-details-card';
+import {ProductCardDetails} from '../components/productdetailspage/Product-details-card';
 
 // Styles
 import '../styles/global.css';
-import './SpecialDetailspage.css';
+import './ProductDetailspage.css';
 
-export const SpecialDetailsPage = () => {
+export const ProductDetailsPage = () => {
     const { id } = useParams();
 
     const [data, setData] = useState(null);
@@ -20,7 +20,7 @@ export const SpecialDetailsPage = () => {
     useEffect(() => {
         setIsPending(true);
         // get a single document (special)
-        projectFirestore.collection('specials').doc(id).get()
+        projectFirestore.collection('products').doc(id).get()
             .then((doc) => {
                 if (doc.exists) {
                     setIsPending(false);
@@ -38,10 +38,10 @@ export const SpecialDetailsPage = () => {
     <>
         <Nav/>
         <div style={{ paddingTop: '52px' }}/>
-        <div className="SpecialDetailsContainer">
+        <div className="ProductDetailsContainer">
             {error && <p>{error}</p>}
             {isPending && <p>Loading...</p>}
-            {data && <SpecialCardDetails
+            {data && <ProductCardDetails
                 name={data.name}
                 price={data.price}
                 image={data.image}

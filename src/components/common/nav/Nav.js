@@ -60,6 +60,9 @@ export const Nav = () => {
                                 <Link to="/" className="nav-item">Home</Link>
                             </li>
                             <li>
+                                <Link to="/menu" className="nav-item">Menu</Link>
+                            </li>
+                            <li>
                                 <Link to="/about" className="nav-item">About</Link>
                             </li>
                             <li>
@@ -102,6 +105,7 @@ export const Nav = () => {
                 <nav className={`NavMenu ${showMenu ? 'open' : ''}`}>
                     {/* Add your navigation links here */}
                     <Link to="/" className="nav-item">Home</Link>
+                    <Link to="/menu" className="nav-item">Menu</Link>
                     <Link to="/about" className="nav-item">About</Link>
                     <Link to="/booking" className="nav-item">Reserve</Link>
                     { !user && (

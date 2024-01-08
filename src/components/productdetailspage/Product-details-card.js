@@ -1,20 +1,21 @@
 import React from "react";
 
 // Styles
-import './Special-card.css';
+import './Product-details-card.css';
 
 
-export const SpecialCardDetails = ({name,price,description,image,ingredients}) => {
+export const ProductCardDetails = ({name,price,description,image,ingredients}) => {
     return (
-        <article>
-            <div className="articleImgContainer">
+        <article className="productDetails">
+            <div className="productDetailsImageContainer">   
                 <img src={image} alt={name}/>
             </div>
-            <div className="articleContentContainer">
+            <div className="productDetailsContentContainer">
                 <div className="TitlePriceContainer">
                     <h3 className="card-title">{name}</h3>
                     <p className="Price highlight-text">${price}</p>
                 </div>
+                <p>Description:</p>
                 <p>{description}</p>
                 <div className="IngredientsContainer">
                         <p>Ingredients:</p>
