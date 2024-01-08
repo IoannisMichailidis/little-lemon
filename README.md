@@ -18,22 +18,24 @@ Below are the previews of how Little Lemon looks on different devices. This sect
 
 <h2>Key Features</h2>
 <h3>E-Booking System</h3>
--Reserve Your Table: Our intuitive e-booking system allows you to easily reserve a table at your favorite restaurant. A few clicks are all it takes to ensure you have a spot waiting for you.
+Reserve Your Table: Our intuitive e-booking system allows you to easily reserve a table at your favorite restaurant. A few clicks are all it takes to ensure you have a spot waiting for you.
 
 <h3>Rating System</h3>
--Share Your Experience: We value your opinion! After your meal, leave a review to share your experience. Your feedback helps others and contributes to the overall community experience.
+Share Your Experience: We value your opinion! After your meal, leave a review to share your experience. Your feedback helps others and contributes to the overall community experience.
 
 <h3>User Account Management</h3>
--Seamless Interaction: With our straightforward login, signup, and logout functionality, managing your account is a breeze.
+Seamless Interaction: With our straightforward login, signup, and logout functionality, managing your account is a breeze.
 
 <h2>Technology Stack</h2>
 <h3>Front-End</h3>
--React Application: Little Lemon is built on React, offering a dynamic and responsive user interface. Whether you’re on a PC or a mobile device, our app provides a consistent, smooth experience.
+React Application: Little Lemon is built on React, offering a dynamic and responsive user interface. Whether you’re on a PC or a mobile device, our app provides a consistent, smooth experience.
 
 <h3>Back-End</h3>
--Firebase Integration: We utilize Firebase for our back-end services.
-    -Firestore Database: Our database is powered by Firestore, ensuring fast, reliable, and scalable data storage.
-    -Firebase Authentication: Secure and straightforward user authentication is provided through Firebase.
+Firebase Integration: We utilize Firebase for our back-end services.
+<ul>
+    <li>Firestore Database: Our database is powered by Firestore, ensuring fast, reliable, and scalable data storage.</li>
+    <li>Firebase Authentication: Secure and straightforward user authentication is provided through Firebase.</li>
+</ul>
 
 <h2>Getting Started with Little Lemon</h2>
 <h3>Initial Database Setup</h3>
