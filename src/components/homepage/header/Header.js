@@ -5,13 +5,18 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../../../hooks/useAuthContext";
 
 // Videos
-import HeaderVideo from "../../../videos/headerVideo.mp4"
+// import HeaderVideo2 from "../../../videos/headerVideo.mp4"
 
 // Styles
 import './Header.css';
 
-export const Header = () => {
+export const Header = ({HeaderVideo}) => {
     const { user } = useAuthContext();
+
+    if (!HeaderVideo) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <header >
              <section className="Header">

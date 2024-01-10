@@ -14,7 +14,7 @@ export const History = () => {
         <section className="HistoryContainer">
             <div className="HistoryHeaderContainer">
                 <h2 className="title">Little Lemon</h2>
-                <p className="subtitle">Chicago</p>
+                <p className="subtitle">Thessaloniki</p>
             </div>
             <div className="HistoryDescriptionContainer">
                 <p>Welcome to Little Lemon, where culinary excellence meets unforgettable dining experiences. Our chef-curated menu features a symphony of flavors, blending the finest ingredients to create delectable dishes that tantalize the taste buds. </p>

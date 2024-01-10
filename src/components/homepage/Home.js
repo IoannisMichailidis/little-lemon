@@ -6,12 +6,14 @@ import {Main} from './main/Main';
 import '../../styles/global.css';
 import './Home.css';
 
-export const Home = () => {
+// Videos
+import HeaderVideo from '../../videos/headerVideo.mp4';
 
+export const Home = () => {
     return (
     <div className="Home">
         <div className="HeaderContainer">
-            <Header />
+            <Header HeaderVideo={HeaderVideo}/>
         </div>
         <div className="MainContainer">
             <Main />
