@@ -3,7 +3,7 @@ import React from "react";
 import Slider from 'react-slick';
 
 // Images
-import avatar_user from '../../../../images/user.png';
+import avatar_user from '../../../../images/user.jpg';
 
 // Components
 import { TestimonialCard } from "./Testimonial-card";
