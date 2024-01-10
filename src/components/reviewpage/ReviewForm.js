@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Rating } from 'react-simple-star-rating'
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -15,8 +15,6 @@ export const ReviewForm = () => {
     const { user } = useAuthContext(); 
     const { addReview, reviewError, reviewIsPending} = useAddReview();
     const [ratingKey, setRatingKey] = useState(0);
-
-    const [isImageLoaded, setImageLoaded] = useState(false);
 
     const formik = useFormik({
         initialValues: {
@@ -54,26 +52,6 @@ export const ReviewForm = () => {
     const handleRatingChange = (rate, name) => {
         formik.setFieldValue(name, rate);
     };
-
-    // Prevent the component to mount before the background image
-    useEffect(() => {
-        const imageUrl = '../../images/reviewImage.jpg';
-        const img = new Image();
-
-        // Check if the image is cached
-        if (img.complete || img.height > 0) {
-            setImageLoaded(true);
-        } else {
-            img.onload = () => {
-                setImageLoaded(true);
-            };
-            img.src = imageUrl;
-        }
-    }, []);
-
-    if (!isImageLoaded) {
-        return <div>Loading...</div>;
-    }
 
     return (
         <div className="ReviewContainer">
