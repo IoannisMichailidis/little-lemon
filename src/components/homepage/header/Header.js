@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 // Custom Hooks
@@ -6,12 +6,16 @@ import { useAuthContext } from "../../../hooks/useAuthContext";
 
 // Videos
 import HeaderVideo from "../../../videos/headerVideo.mp4"
+// Images
+import videoPlaceholder from "../../../images/videoPlaceholder.jpg";
 
 // Styles
 import './Header.css';
 
 export const Header = () => {
     const { user } = useAuthContext();
+    const [videoLoaded, setVideoLoaded] = useState(false);
+
 
     return (
         <header >
@@ -29,10 +33,23 @@ export const Header = () => {
                             </div>
                         </section>
                     <section className="HeaderVideo">
-                    <video autoPlay loop muted>
+                    {/* <video autoPlay loop muted>
                         <source src={HeaderVideo} type="video/mp4" />
                         Your browser does not support the video tag.
-                    </video>
+                    </video> */}
+                    {!videoLoaded && (
+                        <img src={videoPlaceholder} alt="Loading..." className="PlaceholderImage" />
+                    )}
+                    <video 
+                        autoPlay 
+                        loop 
+                        muted 
+                        onLoadedData={() => setVideoLoaded(true)}
+                        style={{ display: videoLoaded ? 'block' : 'none' }}
+                    >
+                        <source src={HeaderVideo} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>                    
                     <div className="VideoOverlay"></div>
                 </section>
             </section>
