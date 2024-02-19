@@ -16,7 +16,6 @@ export const BookingForm = () => {
   const {addBooking, removeTimeslot, bookingError, bookingIsPending} = useAddBooking();
   // Fetch dates and timeslots from Firestore
   const {data} = useCollection('dates');
-
   const [availableTimeslots, setAvailableTimeslots] = useState([]);
 
   // Used for the Client-side validation
@@ -71,7 +70,7 @@ export const BookingForm = () => {
             <div className='BookingFormTitle'>
                 <h2>Book Now</h2>
             </div>
-            <div className='BookingFormInputes'>
+            <div className='BookingFormInputs'>
               <form onSubmit={formik.handleSubmit} noValidate>
                 {/* Date */}
                 <div className='BookingDivs' >

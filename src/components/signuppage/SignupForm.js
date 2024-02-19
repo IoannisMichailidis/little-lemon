@@ -99,7 +99,7 @@ export const SignupForm = () => {
                             :
                             <input aria-label="On Click" disabled={formik.errors.userName || formik.errors.password || formik.errors.email} className='CustomButton' type="submit" value="Sign Up"/>
                         }
-                        { error && <p className="ErrorDiv">Something went wrong!</p>}
+                        { error && <p className="ErrorDiv">Something went wrong! {error}</p>}
                     </form>
                 </div>
                 <div className='LoginFormSignup'>

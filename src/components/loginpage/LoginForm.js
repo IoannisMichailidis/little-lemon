@@ -81,7 +81,7 @@ export const LoginForm = () => {
                             :
                             <input aria-label="On Click" disabled={formik.errors.email || formik.errors.password} className='CustomButton' type="submit" value="Login"/>
                         }
-                        { error && <p className="ErrorDiv">Incorrect email or password.</p>}
+                        { error && <p className="ErrorDiv">Incorrect email or password. </p>}
                     </form>
                 </div>
                 <div className='LoginFormSignup'>
